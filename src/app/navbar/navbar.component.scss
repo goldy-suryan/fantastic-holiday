@@ -1,3 +1,5 @@
+@import "../../global.mixins";
+
 .navbar {
   background-color: #f65a5b;
   padding-top: 0.5em;
@@ -9,9 +11,35 @@
   color: #ffffff;
   font-size: 2em;
   font-weight: bold;
+  @include breakpoint(xs) {
+    font-size: 1.3em;
+  }
+}
+a.navbar-brand:hover {
+  color: rgb(82, 70, 70);
+}
+
+// ul {
+//   @include breakpoint(xs) {
+//     display: none;
+//   }
+// }
+.first {
+  display: block;
+  @include breakpoint(xs) {
+    display: none;
+  }
+}
+
+.second {
+  display: none !important;
 }
 
 ul.nav {
+  @include breakpoint(xs) {
+    position: relative;
+    z-index: 100;
+  }
   li {
     a {
       color: #ffffff;
@@ -24,13 +52,18 @@ ul.nav {
       background: transparent;
       font-size: 1.3em;
     }
+    :focus {
+      background: transparent;
+    }
   }
-  // :hover,
-  // :active {
-  //   background-color: transparent;
-  //   color: #cccccc;
-  //   // TODO change this to something else
-  //   border-top: 1px solid #fff;
-  //   padding-bottom: 1px;
-  // }
+}
+
+.mobile-icon {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 1.1em;
+  margin: -2.2em 1em 0 0;
+  @include breakpoint(sm) {
+    display: none;
+  }
 }

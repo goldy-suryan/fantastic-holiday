@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner" id="top">
   <!-- header -->
   <header><fh-navbar></fh-navbar></header>
   <!-- end of header -->
@@ -38,3 +38,7 @@
 <!-- end of subscribe -->
 
 <fh-contact id="contact"></fh-contact>
+
+<span class="back-to-top" [ngx-scroll-to]="'#top'">
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</span>

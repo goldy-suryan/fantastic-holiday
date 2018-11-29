@@ -1,31 +1,8 @@
-@mixin breakpoint($class) {
-  @if $class == xs {
-    @media (max-width: 767px) {
-      @content;
-    }
-  } @else if $class == sm {
-    @media (min-width: 768px) {
-      @content;
-    }
-  } @else if $class == md {
-    @media (min-width: 992px) {
-      @content;
-    }
-  } @else if $class == lg {
-    @media (min-width: 1200px) {
-      @content;
-    }
-  } @else {
-    @warn "Breakpoint mixin supports: xs, sm, md, lg";
-  }
-}
+@import "../../global.mixins";
 
 .main-about {
   margin-top: 50px;
   @include breakpoint(xs) {
-    margin-top: 0;
-  }
-  @include breakpoint(sm) {
     margin-top: 0;
   }
 }
@@ -35,7 +12,7 @@
     padding-top: 0;
   }
   @include breakpoint(sm) {
-    padding-top: 0;
+    padding-top: 1em;
   }
   p {
     line-height: 1.5em;

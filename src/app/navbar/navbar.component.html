@@ -1,14 +1,43 @@
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Fantastic Holidays</a>
+      <a class="navbar-brand" href="javascript:void(0)">
+        <!--
+          <img src="assets/images/logo1.jpg" alt="logo" class="img-responsive" />
+        -->
+        FANTASTIC HOLIDAYS
+      </a>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Home</a></li>
-      <li><a [ngx-scroll-to]="'#about'">About</a></li>
-      <li><a [ngx-scroll-to]="'#gallery'">Gallery</a></li>
-      <li><a [ngx-scroll-to]="'#services'">Services</a></li>
-      <li><a [ngx-scroll-to]="'#contact'">Contact</a></li>
+    <div
+      class="mobile-icon pull-right"
+      [ngClass]="{ second: !isShown }"
+      (click)="openMenu()"
+    >
+      <span class="contact-right-icons"><i class="fa fa-bars"></i></span>
+    </div>
+    <div
+      class="mobile-icon pull-right"
+      [ngClass]="{ second: isShown }"
+      (click)="openMenu()"
+    >
+      <span class="contact-right-icons"><i class="fa fa-times"></i></span>
+    </div>
+    <ul class="nav navbar-nav navbar-right" [ngClass]="{ first: isShown }">
+      <li><a href="javascript:void(0)" (click)="isShown = 'false'">Home</a></li>
+      <li>
+        <a [ngx-scroll-to]="'#about'" (click)="isShown = 'false'">About</a>
+      </li>
+      <li>
+        <a [ngx-scroll-to]="'#gallery'" (click)="isShown = 'false'">Gallery</a>
+      </li>
+      <li>
+        <a [ngx-scroll-to]="'#services'" (click)="isShown = 'false'"
+          >Services</a
+        >
+      </li>
+      <li>
+        <a [ngx-scroll-to]="'#contact'" (click)="isShown = 'false'">Contact</a>
+      </li>
     </ul>
   </div>
 </nav>

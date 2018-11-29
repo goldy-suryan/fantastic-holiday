@@ -1,3 +1,5 @@
+@import "../../global.mixins";
+
 .subscribe-main {
   padding-bottom: 1em;
   background: url(../../assets/images/subscribe.jpg) no-repeat 0px 0px;
@@ -7,11 +9,11 @@
   background-position: 50% 50%;
 }
 
-.text-h3-1{
-    h3 {
-        font-size: 3em;
-        color: #fff;
-    }
+.text-h3-1 {
+  h3 {
+    font-size: 3em;
+    color: #fff;
+  }
 }
 
 .subscribe-form {
@@ -29,6 +31,10 @@
   border: 1px solid #fff;
   background: #fff;
   -webkit-appearance: none;
+  @include breakpoint(xs) {
+    width: 100%;
+    margin: 5px auto;
+  }
 }
 
 .subscribe-main input[type="submit"]:hover {
@@ -53,4 +59,7 @@
   -webkit-appearance: none;
   background: #000;
   cursor: pointer;
+  @include breakpoint(xs) {
+    width: 100%;
+  }
 }
