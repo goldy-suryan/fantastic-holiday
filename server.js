@@ -14,8 +14,8 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist/fh/index.html"));
 });
 
-let port = 3001 || process.env.PORT;
-app.listen(port, "0.0.0.0", err => {
+// let port = 3001 || process.env.PORT;
+app.listen(process.env.PORT || 3000, "0.0.0.0", err => {
   if (err) throw new Error("Something went wrong!!!");
-  console.log("http://localhost:" + port + "/");
+  console.log("started node server");
 });
