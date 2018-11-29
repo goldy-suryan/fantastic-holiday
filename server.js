@@ -15,7 +15,7 @@ app.get("*", (req, res) => {
 });
 
 let port = 3001 || process.env.PORT;
-app.listen(port, err => {
+app.listen(port, "0.0.0.0", err => {
   if (err) throw new Error("Something went wrong!!!");
   console.log("http://localhost:" + port + "/");
 });
