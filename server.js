@@ -10,10 +10,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist/fh/index.html"));
-});
-
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist/fh/index.html"));
 });
