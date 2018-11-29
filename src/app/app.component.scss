@@ -1,0 +1,63 @@
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $class == sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+.banner {
+  background: url(../assets/images/banner.png) center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+
+.banner-text {
+  padding: 20vw 15vw 10vw;
+  box-sizing: border-box;
+}
+
+.slider-info {
+  //   TODO REMOVE WIDTH FOR MOBILE VIEW
+  width: 560px;
+  margin-left: auto;
+  @include breakpoint(xs) {
+    width: 100%;
+  }
+  p {
+    color: #fff;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    @include breakpoint(xs) {
+      font-size: 1em;
+    }
+  }
+}
+
+.slider-info h3 {
+  // TODO change font size for mobile view
+  font-size: 3em;
+  color: rgb(245, 33, 33);
+  letter-spacing: 0.1em;
+  @include breakpoint(xs) {
+    font-size: 2em;
+  }
+}

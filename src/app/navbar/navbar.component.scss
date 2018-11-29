@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #f65a5b;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-radius: 0;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+ul.nav {
+  li {
+    a {
+      color: #ffffff;
+      font-weight: normal;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    :hover {
+      color: #ccc;
+      background: transparent;
+      font-size: 1.3em;
+    }
+  }
+  // :hover,
+  // :active {
+  //   background-color: transparent;
+  //   color: #cccccc;
+  //   // TODO change this to something else
+  //   border-top: 1px solid #fff;
+  //   padding-bottom: 1px;
+  // }
+}

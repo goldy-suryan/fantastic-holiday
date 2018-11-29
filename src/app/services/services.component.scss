@@ -1,0 +1,67 @@
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $class == sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+.serives {
+  background-color: #efefef;
+  margin-top: 3em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  @include breakpoint(xs) {
+    margin-top: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  @include breakpoint(sm) {
+    margin-top: 1.3em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+}
+
+.welcome-grid h4 {
+  font-size: 2em;
+  letter-spacing: 1px;
+  color: #f65a5b;
+  @include breakpoint(xs) {
+    font-size: 1.2em;
+  }
+  @include breakpoint(sm) {
+    font-size: 1.6em;
+  }
+}
+
+.welcome-grid i {
+  color: #00b6e3;
+  font-size: 42px;
+  @include breakpoint(xs) {
+    font-size: 1.4em;
+  }
+  @include breakpoint(sm) {
+    font-size: 1.6em;
+  }
+}
+.welcome-grid {
+  padding: 2em 0;
+  p {
+    font-size: 1.2em;
+  }
+}

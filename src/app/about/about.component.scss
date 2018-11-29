@@ -1,0 +1,77 @@
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $class == sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+.main-about {
+  margin-top: 50px;
+  @include breakpoint(xs) {
+    margin-top: 0;
+  }
+  @include breakpoint(sm) {
+    margin-top: 0;
+  }
+}
+.about-left {
+  padding: 2em 2em;
+  @include breakpoint(xs) {
+    padding-top: 0;
+  }
+  @include breakpoint(sm) {
+    padding-top: 0;
+  }
+  p {
+    line-height: 1.5em;
+    font-size: 1.15em;
+    @include breakpoint(xs) {
+      line-height: 1.2em;
+      font-size: 1.1em;
+    }
+    @include breakpoint(sm) {
+      line-height: 1.3em;
+      font-size: 1.1em;
+      padding-top: 0;
+    }
+  }
+}
+.about-left h3 {
+  font-size: 3em;
+  margin-bottom: 1em;
+  color: #f65a5b;
+  @include breakpoint(xs) {
+    margin-top: 0;
+    font-size: 2em;
+    text-align: center;
+  }
+  @include breakpoint(sm) {
+    margin-top: 0;
+    font-size: 2em;
+    text-align: center;
+    margin: 0.2em;
+  }
+}
+
+.about-right img {
+  width: 90%;
+  //   height: 90%;
+  @include breakpoint(xs) {
+    width: 100%;
+  }
+}
