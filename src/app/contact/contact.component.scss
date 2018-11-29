@@ -26,17 +26,24 @@ input.form-button {
   float: right;
 }
 
-.content-right h4 {
-  font-size: 26px;
-  color: #f65a5b;
-  margin-bottom: 20px;
+.content-right {
+  padding-left: 7em;
   @include breakpoint(xs) {
-    text-align: center;
-    font-size: 1.1em;
+    clear: both;
+    padding-top: 0.6em;
   }
-  @include breakpoint(sm) {
-    text-align: center;
-    font-size: 1.3em;
+  h4 {
+    font-size: 26px;
+    color: #f65a5b;
+    margin-bottom: 20px;
+    @include breakpoint(xs) {
+      text-align: center;
+      font-size: 1.1em;
+    }
+    @include breakpoint(sm) {
+      text-align: center;
+      font-size: 1.3em;
+    }
   }
 }
 
