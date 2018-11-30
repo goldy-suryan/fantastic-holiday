@@ -3,6 +3,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { ScrollToModule } from "@nicky-lenaers/ngx-scroll-to";
 import { ModalModule } from "ngx-bootstrap/modal";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { NavbarComponent } from "./navbar/navbar.component";
 import { AboutComponent } from "./about/about.component";
@@ -29,6 +31,9 @@ const routes: Routes = [];
   imports: [
     RouterModule.forRoot(routes),
     CommonModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     ScrollToModule.forRoot(),
     ModalModule.forRoot()
   ],

@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-6 content-left">
         <h4>CONTACT FORM</h4>
-        <form action="#" method="post">
+        <form novalidate [formGroup]="bookingForm" (submit)="submit()">
           <div class="form-row">
             <div class="form-group col-md-12">
               <input
@@ -12,7 +12,8 @@
                 class="form-control"
                 id="inputtext"
                 placeholder="Name"
-                required=""
+                name="name"
+                formControlName="name"
               />
             </div>
             <div class="form-group col-md-12">
@@ -21,7 +22,8 @@
                 class="form-control"
                 id="inputEmail4"
                 placeholder="Email"
-                required=""
+                name="email"
+                formControlName="email"
               />
             </div>
             <div class="form-group col-md-12">
@@ -30,10 +32,67 @@
                 id="exampleFormControlTextarea1"
                 rows="3"
                 placeholder="Text Hear"
-                required=""
+                name="description"
+                formControlName="description"
               ></textarea>
             </div>
-            <input type="submit" class="form-button" value="SUBMIT" />
+            <div class="form-errors">
+              <div
+                class="name-field-error"
+                *ngIf="bookingForm.controls['name'].errors"
+              >
+                <div
+                  *ngIf="
+                    bookingForm.controls['name'].errors.required &&
+                    bookingForm.controls['name'].touched
+                  "
+                >
+                  <p class="error-statement">Name is required</p>
+                </div>
+              </div>
+              <div
+                class="email-field-error"
+                *ngIf="bookingForm.controls['email'].errors"
+              >
+                <div
+                  *ngIf="
+                    bookingForm.controls['email'].errors.required &&
+                    bookingForm.controls['email'].touched
+                  "
+                >
+                  <p class="error-statement">Email is required</p>
+                </div>
+                <div
+                  *ngIf="
+                    bookingForm.controls['email'].errors.email &&
+                    bookingForm.controls['email'].touched
+                  "
+                >
+                  <p class="error-statement">
+                    Email must be a valid email address
+                  </p>
+                </div>
+              </div>
+              <div
+                class="description-field-error"
+                *ngIf="bookingForm.controls['description'].errors"
+              >
+                <div
+                  *ngIf="
+                    bookingForm.controls['description'].errors.required &&
+                    bookingForm.controls['description'].touched
+                  "
+                >
+                  <p class="error-statement">Description is required</p>
+                </div>
+              </div>
+            </div>
+            <input
+              type="submit"
+              class="form-button"
+              value="SUBMIT"
+              [disabled]="bookingForm.invalid || bookingForm.pristine"
+            />
           </div>
         </form>
       </div>
