@@ -23,3 +23,30 @@ p {
     }
   }
 }
+
+.modal-backdrop {
+  opacity: 0.8 !important;
+}
+
+.modal {
+  text-align: center;
+  :before {
+    @include breakpoint(sm) {
+      display: inline-block;
+      vertical-align: middle;
+      content: "";
+      height: 100%;
+    }
+  }
+}
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.modal-body {
+  padding-top: 0;
+  @include breakpoint(xs) {
+    padding-top: 15px;
+  }
+}

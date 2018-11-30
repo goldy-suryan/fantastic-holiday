@@ -31,6 +31,7 @@ input.form-button {
   @include breakpoint(xs) {
     clear: both;
     padding-top: 0.6em;
+    padding-left: 1em;
   }
   h4 {
     font-size: 26px;

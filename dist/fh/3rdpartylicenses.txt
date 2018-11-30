@@ -275,6 +275,14 @@ MIT
 @angular/router
 MIT
 
+ngx-bootstrap/utils
+
+ngx-bootstrap/component-loader
+
+ngx-bootstrap/positioning
+
+ngx-bootstrap/modal
+
 @nicky-lenaers/ngx-scroll-to
 MIT
 MIT License

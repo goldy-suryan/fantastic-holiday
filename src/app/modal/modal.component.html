@@ -1,0 +1,7 @@
+<div class="modal-body">
+  <div *ngIf="list.length">
+    <ng-container *ngFor="let item of list">
+      <img src="assets/images/{{item + 1 }}.jpg" />
+    </ng-container>
+  </div>
+</div>
