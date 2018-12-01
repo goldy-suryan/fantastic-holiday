@@ -1,0 +1,75 @@
+@import "../../global.mixins";
+
+.guarantee_wrapper,
+.travellers_wrapper,
+.agent_wrapper,
+.support_wrapper {
+  background-color: #ffffff;
+  width: 90%;
+  margin: -2em auto 0;
+  @include breakpoint(xs) {
+    margin-bottom: 3em;
+  }
+}
+
+.guarantee,
+.travellers,
+.agent,
+.support {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 5em 2.5em;
+  color: #000000;
+}
+
+p {
+  color: #3f3939;
+}
+h3 {
+  padding-top: 1em;
+}
+
+.guarantee {
+  background: url(../../assets/images/guarantee.png) no-repeat center 10%;
+}
+
+.guarantee:hover {
+  background: url(../../assets/images/guarantee1.png) no-repeat center 10%;
+}
+
+.travellers {
+  background: url(../../assets/images/like.png) no-repeat center 10%;
+}
+
+.travellers:hover {
+  background: url(../../assets/images/like1.png) no-repeat center 10%;
+}
+
+.agent {
+  background: url(../../assets/images/detective.png) no-repeat center 10%;
+}
+
+.agent:hover {
+  background: url(../../assets/images/detective1.png) no-repeat center 10%;
+}
+
+.support {
+  background: url(../../assets/images/woman-with-headset.png) no-repeat center
+    10%;
+}
+
+.support:hover {
+  background: url(../../assets/images/woman-with-headset1.png) no-repeat center
+    10%;
+}
+.guarantee_wrapper:hover,
+.travellers_wrapper:hover,
+.agent_wrapper:hover,
+.support_wrapper:hover {
+  background-color: #f65a5b;
+  color: #ffffff;
+  p,
+  h3 {
+    color: #ffffff;
+  }
+}

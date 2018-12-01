@@ -1,16 +1,21 @@
 @import "../../global.mixins";
 
+.logo a{
+  font-family: 'Rock Salt', cursive;
+  font-size: 1em;
+}
+
 #myFooter {
   @include breakpoint(xs) {
     text-align: center;
   }
-  background-color: #3c3d41;
+  background-color: #31124b;
   color: white;
   padding-top: 30px;
   margin-top: 30px;
 
   .footer-copyright {
-    background-color: #333333;
+    background-color: #31124b;
     padding-top: 3px;
     padding-bottom: 3px;
     text-align: center;
@@ -38,7 +43,6 @@
     margin-top: 30px;
   }
   h2 a {
-    font-size: 50px;
     text-align: center;
     color: #fff;
   }
@@ -71,7 +75,7 @@
   }
   .btn {
     color: white;
-    background-color: #d84b6b;
+    background-color: #a661cd;
     border-radius: 20px;
     border: none;
     width: 150px;

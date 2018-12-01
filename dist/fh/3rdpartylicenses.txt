@@ -1,3 +1,6 @@
+wowjs
+GPLv3
+
 rxjs
 Apache-2.0
                                Apache License

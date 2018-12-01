@@ -14,6 +14,7 @@ import { SubscribeComponent } from "./subscribe/subscribe.component";
 import { ContactComponent } from "./contact/contact.component";
 import { ModalContentComponent } from "./modal/modal.component";
 import { FooterComponent } from "./footer/footer.component";
+import { HospitalityComponent } from "./hospitality/hospitality.component";
 
 const routes: Routes = [];
 
@@ -26,7 +27,8 @@ const routes: Routes = [];
     SubscribeComponent,
     ContactComponent,
     ModalContentComponent,
-    FooterComponent
+    FooterComponent,
+    HospitalityComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -47,7 +49,8 @@ const routes: Routes = [];
     ContactComponent,
     ScrollToModule,
     ModalContentComponent,
-    FooterComponent
+    FooterComponent,
+    HospitalityComponent
   ]
 })
 export class AppRoutingModule {}

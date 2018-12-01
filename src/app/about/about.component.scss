@@ -21,11 +21,6 @@
       line-height: 1.2em;
       font-size: 1.1em;
     }
-    @include breakpoint(sm) {
-      line-height: 1.3em;
-      font-size: 1.1em;
-      padding-top: 0;
-    }
   }
 }
 .about-left h3 {
