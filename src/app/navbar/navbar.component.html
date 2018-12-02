@@ -22,7 +22,11 @@
     >
       <span class="contact-right-icons"><i class="fa fa-times"></i></span>
     </div>
-    <ul class="nav navbar-nav navbar-right" [ngClass]="{ first: isShown }">
+    <ul
+      class="nav navbar-nav navbar-right"
+      [ngClass]="{ first: isShown }"
+      #menu
+    >
       <li><a href="javascript:void(0)" (click)="isShown = 'false'">Home</a></li>
       <li>
         <a [ngx-scroll-to]="'#about'" (click)="isShown = 'false'">About</a>

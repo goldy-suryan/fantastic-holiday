@@ -6,10 +6,15 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class BookingService {
-  private url = "/get-booking";
+  private bookingUrl = "/get-booking";
+  private subUrl = "/subscribe";
   constructor(private http: HttpClient) {}
 
   book(data): Observable<any> {
-    return this.http.post(this.url, data);
+    return this.http.post(this.bookingUrl, data);
+  }
+
+  subscribe(sub): Observable<any> {
+    return this.http.post(this.subUrl, sub);
   }
 }

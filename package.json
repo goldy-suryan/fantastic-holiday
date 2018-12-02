@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~7.0.0",
+    "@angular/animations": "^7.0.4",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
     "@angular/core": "~7.0.0",
@@ -26,6 +26,7 @@
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "ngx-bootstrap": "^3.1.2",
+    "ngx-toastr": "^9.1.1",
     "nodemailer": "^4.7.0",
     "rxjs": "~6.3.3",
     "wowjs": "^1.1.3",

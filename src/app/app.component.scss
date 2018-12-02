@@ -63,6 +63,7 @@ header {
   right: 10px;
   z-index: 1000;
   color: #f65a5b;
+  cursor: pointer;
   @include breakpoint(xs) {
     font-size: 1.5em;
   }

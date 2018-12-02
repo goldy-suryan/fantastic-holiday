@@ -1,11 +1,7 @@
 import { Component } from "@angular/core";
-import {
-  FormGroup,
-  FormControl,
-  FormBuilder,
-  Validators
-} from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { BookingService } from "../sharedService/booking.service";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "fh-contact",
@@ -14,7 +10,12 @@ import { BookingService } from "../sharedService/booking.service";
 })
 export class ContactComponent {
   bookingForm: FormGroup;
-  constructor(private fb: FormBuilder, private bookingService: BookingService) {
+  alerts: any[];
+  constructor(
+    private fb: FormBuilder,
+    private bookingService: BookingService,
+    private toastr: ToastrService
+  ) {
     this.bookingForm = this.fb.group({
       name: ["", Validators.required],
       email: ["", [Validators.required, Validators.email]],
@@ -23,7 +24,13 @@ export class ContactComponent {
   }
 
   submit() {
-    console.log(this.bookingForm.value);
-    this.bookingService.book(this.bookingForm.value).subscribe(console.log);
+    this.bookingService.book(this.bookingForm.value).subscribe(data => {
+      if (data && data.message) {
+        this.toastr.success(data.message, "Success");
+      }
+    },
+    err => {
+      throw err;
+    });
   }
 }

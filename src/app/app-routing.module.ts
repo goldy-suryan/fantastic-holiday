@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { ScrollToModule } from "@nicky-lenaers/ngx-scroll-to";
 import { ModalModule } from "ngx-bootstrap/modal";
+import { ToastrModule } from "ngx-toastr";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -34,10 +35,11 @@ const routes: Routes = [];
     RouterModule.forRoot(routes),
     CommonModule,
     FormsModule,
-    HttpClientModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ScrollToModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   exports: [
     RouterModule,

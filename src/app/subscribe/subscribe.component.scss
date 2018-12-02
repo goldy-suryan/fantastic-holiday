@@ -64,3 +64,12 @@
     width: 100%;
   }
 }
+
+.invalid-feedback {
+  font-size: 0.9em;
+  color: #f65a5b !important;
+  line-height: 0.5em;
+  text-align: center;
+  background: #000;
+  padding: 1em;
+}

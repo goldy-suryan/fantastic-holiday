@@ -13,24 +13,15 @@ export class GalleryComponnt implements OnDestroy {
   imageIndex: number;
   constructor(private modalService: BsModalService) {
     this.galleryImages = [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12"
+      { source: "c1", location: "Goa", listingNumber: 10 },
+      { source: "c2", location: "Andaman Island", listingNumber: 12 },
+      { source: "c3", location: "Kerela", listingNumber: 15 }
     ];
     this.imageIndex = 0;
   }
-  openModalWithComponent(index) {
+  openModalWithComponent(src) {
     const initialState = {
-      list: [index]
+      list: [src]
     };
     this.bsModalRef = this.modalService.show(ModalContentComponent, {
       initialState
