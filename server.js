@@ -8,7 +8,6 @@ let config = require("./server/config.json");
 let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    //TODO: credentials goes here for gmail username and password
     user: config.username,
     pass: config.password
   }
@@ -44,7 +43,6 @@ app.post("/get-booking", (req, res) => {
     return;
   }
   let mailOptions = {
-    from: `${email}`,
     to: "fantasticholidaysops1@gmail.com",
     subject: "Booking",
     html: `name: ${name}, email: ${email}, description: ${description}`
@@ -53,12 +51,10 @@ app.post("/get-booking", (req, res) => {
     if (err) {
       res.status(500).json({ error: err });
     } else {
-      res
-        .status(200)
-        .json({
-          message: "Sent successfully, will get in touch with you",
-          response: info.response
-        });
+      res.status(200).json({
+        message: "Sent successfully, will get in touch with you",
+        response: info.response
+      });
     }
   });
 });
@@ -70,7 +66,6 @@ app.post("/subscribe", (req, res) => {
     return;
   }
   let mailOptions = {
-    from: "",
     to: "fantasticholidaysops1@gmail.com",
     subject: "Subscriber",
     html: `email: ${subscriber}`

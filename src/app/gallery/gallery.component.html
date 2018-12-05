@@ -2,8 +2,8 @@
   <div class="agile_wthree_inner_grids">
     <div class="container">
       <div class="text-h3 text-center">
-        <h3><strong>Featured</strong> Destination</h3>
-        <p>Lorem Ipsum is not simply random text</p>
+        <h3 style="margin-bottom: 1em;"><strong style="color: #F65A5B">Featured</strong> Destination</h3>
+        <!-- <p>Lorem Ipsum is not simply random text</p> -->
       </div>
       <div class="row" *ngIf="galleryImages">
         <div
@@ -11,7 +11,10 @@
           *ngFor="let image of galleryImages; let i = index"
         >
           <div class="card">
-            <div class="card-image" (click)="openModalWithComponent(image.source)">
+            <div
+              class="card-image"
+              (click)="openModalWithComponent(image.source)"
+            >
               <img
                 src="assets/images/{{image.source}}.jpg"
                 alt="Avatar"
@@ -22,7 +25,7 @@
               <h4>
                 <b>{{ image.location }}</b>
               </h4>
-              <p>{{ image.listingNumber }} listing</p>
+              <!-- <p>{{ image.listingNumber }} listing</p> -->
             </div>
           </div>
         </div>
