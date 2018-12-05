@@ -43,6 +43,7 @@ app.post("/get-booking", (req, res) => {
     return;
   }
   let mailOptions = {
+    from: `${email}`,
     to: "fantasticholidaysops1@gmail.com",
     subject: "Booking",
     html: `name: ${name}, email: ${email}, description: ${description}`
@@ -66,6 +67,7 @@ app.post("/subscribe", (req, res) => {
     return;
   }
   let mailOptions = {
+    from: `${subscriber}`,
     to: "fantasticholidaysops1@gmail.com",
     subject: "Subscriber",
     html: `email: ${subscriber}`
